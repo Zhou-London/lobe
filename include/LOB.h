@@ -66,6 +66,8 @@ struct LOB {
   PriceLevelTable pl_table;
 };
 
+inline void insert_order(LOB& lob, Side side, Price price, Quantity qty){
 
+}
 
 } // namespace mose
