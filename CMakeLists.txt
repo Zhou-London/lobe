@@ -15,5 +15,4 @@ add_executable(mose
 
 target_include_directories(mose PRIVATE
     include
-    include/compute
 )
