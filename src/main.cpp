@@ -1,22 +1,20 @@
 
 #include "LOB.h"
 #include <cassert>
+#include <cstdint>
 #include <iostream>
+#include <ranges>
 
 #define VERSION 0.1
 
 int main(int argc, char **argv) {
   mose::LOB lob;
-  auto id1 = mose::insert_order(lob, mose::Side::bid, 100.123, 10, 0);
-  auto id2 = mose::insert_order(lob, mose::Side::bid, 100, 100, 0);
-  auto index2 = lob.order_table.find_index[id2];
+  for (auto i : std::ranges::views::iota(uint64_t{1000}, uint64_t{2000})) {
+    mose::insert_order(lob, mose::Side::bid, float(i), (i + 500 - 1) / 500, i);
+  }
 
-  assert(lob.order_table.ids.size() == 2 && lob.pl_table.prices.size() == 2);
-
-  mose::remove_order(lob, id1);
-
-  assert(lob.pl_table.order_counts[0] == 0 && lob.pl_table.prices.size() == 2);
-  assert(lob.pl_table.prices[lob.order_table.levels[index2]] == float(100));
+  assert(lob.order_table.ids.size() == 1000);
+  assert(lob.pl_table.prices[0] == float(1000));
 
   return 0;
 }
