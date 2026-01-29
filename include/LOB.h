@@ -91,7 +91,7 @@ struct PriceLevelTable {
 struct LOB {
   OrderTable order_table;
   PriceLevelTable pl_table;
-  OrderId next_order_id = 1;
+  OrderId next_order_id = 0;
 };
 
 inline OrderId insert_order(LOB &lob, Side side, Price price, Quantity qty,

@@ -15,8 +15,8 @@ int main(int argc, char **argv) {
 
   mose::remove_order(lob, id1);
 
-  assert(lob.order_table.ids.size() == 1 && lob.pl_table.prices.size() == 2);
-  assert(lob.order_table.levels[index2] == float(100));
+  assert(lob.pl_table.order_counts[0] == 0 && lob.pl_table.prices.size() == 2);
+  assert(lob.pl_table.prices[lob.order_table.levels[index2]] == float(100));
 
   return 0;
 }
