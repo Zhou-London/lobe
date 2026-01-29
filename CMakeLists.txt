@@ -13,4 +13,6 @@ add_executable(mose
     src/main.cpp
 )
 
-target_include_directories(mose PRIVATE src)
+target_include_directories(mose PRIVATE
+    include
+)
