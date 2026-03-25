@@ -1,0 +1,40 @@
+# Doxyfile for LOBE — Light Order Backtesting Engine
+
+PROJECT_NAME           = "LOBE"
+PROJECT_NUMBER         = "1.0.0"
+PROJECT_BRIEF          = "A Level-2 LOB backtesting engine for HFT research"
+
+OUTPUT_DIRECTORY       = ../build/docs
+INPUT                  = ../include/lobe ../tools/lobe-backtester
+RECURSIVE              = YES
+
+FILE_PATTERNS          = *.h *.cpp
+EXTENSION_MAPPING      = h=C++
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+HTML_OUTPUT            = html
+HTML_COLORSTYLE        = LIGHT
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+
+HAVE_DOT               = NO
+CLASS_DIAGRAMS         = YES
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+
+JAVADOC_AUTOBRIEF      = YES
+MARKDOWN_SUPPORT       = YES
+
+# C++23 support
+CLANG_ASSISTED_PARSING = NO
+CPP_CLI_SUPPORT        = NO

@@ -6,3 +6,6 @@ build
 
 # editor
 .vscode
+
+# backtest output
+*.csv
