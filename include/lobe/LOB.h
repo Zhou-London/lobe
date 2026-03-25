@@ -3,7 +3,7 @@
 #include <vector>
 #define ORDERS_NUM 10000
 
-namespace mose {
+namespace lobe {
 
 namespace container {
 template <typename T> using vector = std::vector<T>;
@@ -157,4 +157,4 @@ inline void remove_order(LOB &lob, OrderId order_id) {
   lob.order_table.remove(order_id);
 }
 
-} // namespace mose
+} // namespace lobe
